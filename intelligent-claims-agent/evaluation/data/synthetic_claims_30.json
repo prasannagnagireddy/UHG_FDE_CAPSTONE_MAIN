@@ -1,0 +1,515 @@
+[
+  {
+    "synthetic_id": "SYN-0001",
+    "scenario": "clean_complete",
+    "scenario_description": "complete documents and consistent fields",
+    "expected_handling": "normal_review",
+    "claimant_name": "Aarav Khan",
+    "policy_number": "DEMO-POL-10001",
+    "claim_type": "collision",
+    "claim_amount": 220000,
+    "incident_date": "2026-01-01",
+    "description": "Fictional collision claim test case 1; synthetic scenario data only.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true
+  },
+  {
+    "synthetic_id": "SYN-0002",
+    "scenario": "policy_mismatch",
+    "scenario_description": "policy number differs across documents",
+    "expected_handling": "flag_mismatch",
+    "claimant_name": "Diya Gupta",
+    "policy_number": "DEMO-POL-10002",
+    "claim_type": "property_damage",
+    "claim_amount": 28500,
+    "incident_date": "2026-02-02",
+    "description": "Fictional property_damage claim test case 2; synthetic scenario data only.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true,
+    "document_policy_number": "DEMO-POL-MISMATCH"
+  },
+  {
+    "synthetic_id": "SYN-0003",
+    "scenario": "missing_invoice",
+    "scenario_description": "repair invoice missing",
+    "expected_handling": "request_information",
+    "claimant_name": "Ishaan Nair",
+    "policy_number": "DEMO-POL-10003",
+    "claim_type": "theft",
+    "claim_amount": 220000,
+    "incident_date": "2026-03-03",
+    "description": "Fictional theft claim test case 3; synthetic scenario data only.",
+    "documents": [
+      "claim_form"
+    ],
+    "human_decision_required": true
+  },
+  {
+    "synthetic_id": "SYN-0004",
+    "scenario": "low_confidence_docs",
+    "scenario_description": "low confidence document classification",
+    "expected_handling": "human_review",
+    "claimant_name": "Meera Patel",
+    "policy_number": "DEMO-POL-10004",
+    "claim_type": "medical",
+    "claim_amount": 28500,
+    "incident_date": "2026-04-04",
+    "description": "Fictional medical claim test case 4; synthetic scenario data only.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true,
+    "document_confidence": 0.32
+  },
+  {
+    "synthetic_id": "SYN-0005",
+    "scenario": "duplicate_claim",
+    "scenario_description": "duplicate case reference",
+    "expected_handling": "flag_duplicate",
+    "claimant_name": "Kabir Das",
+    "policy_number": "DEMO-POL-10005",
+    "claim_type": "collision",
+    "claim_amount": 76000,
+    "incident_date": "2026-05-05",
+    "description": "Fictional collision claim test case 5; synthetic scenario data only.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true,
+    "duplicate_of": "SYN-0001"
+  },
+  {
+    "synthetic_id": "SYN-0006",
+    "scenario": "high_value_claim",
+    "scenario_description": "amount above demo threshold",
+    "expected_handling": "escalate_review",
+    "claimant_name": "Anaya Iyer",
+    "policy_number": "DEMO-POL-10006",
+    "claim_type": "property_damage",
+    "claim_amount": 450000,
+    "incident_date": "2026-06-06",
+    "description": "Fictional property_damage claim test case 6; synthetic scenario data only.",
+    "documents": [
+      "claim_form"
+    ],
+    "human_decision_required": true
+  },
+  {
+    "synthetic_id": "SYN-0007",
+    "scenario": "date_inconsistency",
+    "scenario_description": "incident dates inconsistent",
+    "expected_handling": "flag_date_conflict",
+    "claimant_name": "Rohan Sharma",
+    "policy_number": "DEMO-POL-10007",
+    "claim_type": "theft",
+    "claim_amount": 135000,
+    "incident_date": "2026-07-07",
+    "description": "Fictional theft claim test case 7; synthetic scenario data only.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true,
+    "document_incident_date": "2026-01-01"
+  },
+  {
+    "synthetic_id": "SYN-0008",
+    "scenario": "suspicious_description",
+    "scenario_description": "suspicious or contradictory narrative",
+    "expected_handling": "human_review",
+    "claimant_name": "Tara Rao",
+    "policy_number": "DEMO-POL-10008",
+    "claim_type": "medical",
+    "claim_amount": 12000,
+    "incident_date": "2026-08-08",
+    "description": "Fictional medical claim test case 8; synthetic scenario data only. Conflicting test notes intentionally included.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true
+  },
+  {
+    "synthetic_id": "SYN-0009",
+    "scenario": "clean_complete",
+    "scenario_description": "complete documents and consistent fields",
+    "expected_handling": "normal_review",
+    "claimant_name": "Vivaan Singh",
+    "policy_number": "DEMO-POL-10009",
+    "claim_type": "collision",
+    "claim_amount": 28500,
+    "incident_date": "2026-09-09",
+    "description": "Fictional collision claim test case 9; synthetic scenario data only.",
+    "documents": [
+      "claim_form"
+    ],
+    "human_decision_required": true
+  },
+  {
+    "synthetic_id": "SYN-0010",
+    "scenario": "policy_mismatch",
+    "scenario_description": "policy number differs across documents",
+    "expected_handling": "flag_mismatch",
+    "claimant_name": "Nisha Reddy",
+    "policy_number": "DEMO-POL-10010",
+    "claim_type": "property_damage",
+    "claim_amount": 76000,
+    "incident_date": "2026-10-10",
+    "description": "Fictional property_damage claim test case 10; synthetic scenario data only.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true,
+    "document_policy_number": "DEMO-POL-MISMATCH"
+  },
+  {
+    "synthetic_id": "SYN-0011",
+    "scenario": "missing_invoice",
+    "scenario_description": "repair invoice missing",
+    "expected_handling": "request_information",
+    "claimant_name": "Aarav Khan",
+    "policy_number": "DEMO-POL-10011",
+    "claim_type": "theft",
+    "claim_amount": 12000,
+    "incident_date": "2026-11-11",
+    "description": "Fictional theft claim test case 11; synthetic scenario data only.",
+    "documents": [
+      "claim_form"
+    ],
+    "human_decision_required": true
+  },
+  {
+    "synthetic_id": "SYN-0012",
+    "scenario": "low_confidence_docs",
+    "scenario_description": "low confidence document classification",
+    "expected_handling": "human_review",
+    "claimant_name": "Diya Gupta",
+    "policy_number": "DEMO-POL-10012",
+    "claim_type": "medical",
+    "claim_amount": 220000,
+    "incident_date": "2026-12-12",
+    "description": "Fictional medical claim test case 12; synthetic scenario data only.",
+    "documents": [
+      "claim_form"
+    ],
+    "human_decision_required": true,
+    "document_confidence": 0.32
+  },
+  {
+    "synthetic_id": "SYN-0013",
+    "scenario": "duplicate_claim",
+    "scenario_description": "duplicate case reference",
+    "expected_handling": "flag_duplicate",
+    "claimant_name": "Ishaan Nair",
+    "policy_number": "DEMO-POL-10013",
+    "claim_type": "collision",
+    "claim_amount": 220000,
+    "incident_date": "2026-01-13",
+    "description": "Fictional collision claim test case 13; synthetic scenario data only.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true,
+    "duplicate_of": "SYN-0001"
+  },
+  {
+    "synthetic_id": "SYN-0014",
+    "scenario": "high_value_claim",
+    "scenario_description": "amount above demo threshold",
+    "expected_handling": "escalate_review",
+    "claimant_name": "Meera Patel",
+    "policy_number": "DEMO-POL-10014",
+    "claim_type": "property_damage",
+    "claim_amount": 450000,
+    "incident_date": "2026-02-14",
+    "description": "Fictional property_damage claim test case 14; synthetic scenario data only.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true
+  },
+  {
+    "synthetic_id": "SYN-0015",
+    "scenario": "date_inconsistency",
+    "scenario_description": "incident dates inconsistent",
+    "expected_handling": "flag_date_conflict",
+    "claimant_name": "Kabir Das",
+    "policy_number": "DEMO-POL-10015",
+    "claim_type": "theft",
+    "claim_amount": 135000,
+    "incident_date": "2026-03-15",
+    "description": "Fictional theft claim test case 15; synthetic scenario data only.",
+    "documents": [
+      "claim_form"
+    ],
+    "human_decision_required": true,
+    "document_incident_date": "2026-01-01"
+  },
+  {
+    "synthetic_id": "SYN-0016",
+    "scenario": "suspicious_description",
+    "scenario_description": "suspicious or contradictory narrative",
+    "expected_handling": "human_review",
+    "claimant_name": "Anaya Iyer",
+    "policy_number": "DEMO-POL-10016",
+    "claim_type": "medical",
+    "claim_amount": 28500,
+    "incident_date": "2026-04-16",
+    "description": "Fictional medical claim test case 16; synthetic scenario data only. Conflicting test notes intentionally included.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true
+  },
+  {
+    "synthetic_id": "SYN-0017",
+    "scenario": "clean_complete",
+    "scenario_description": "complete documents and consistent fields",
+    "expected_handling": "normal_review",
+    "claimant_name": "Rohan Sharma",
+    "policy_number": "DEMO-POL-10017",
+    "claim_type": "collision",
+    "claim_amount": 220000,
+    "incident_date": "2026-05-17",
+    "description": "Fictional collision claim test case 17; synthetic scenario data only.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true
+  },
+  {
+    "synthetic_id": "SYN-0018",
+    "scenario": "policy_mismatch",
+    "scenario_description": "policy number differs across documents",
+    "expected_handling": "flag_mismatch",
+    "claimant_name": "Tara Rao",
+    "policy_number": "DEMO-POL-10018",
+    "claim_type": "property_damage",
+    "claim_amount": 76000,
+    "incident_date": "2026-06-18",
+    "description": "Fictional property_damage claim test case 18; synthetic scenario data only.",
+    "documents": [
+      "claim_form"
+    ],
+    "human_decision_required": true,
+    "document_policy_number": "DEMO-POL-MISMATCH"
+  },
+  {
+    "synthetic_id": "SYN-0019",
+    "scenario": "missing_invoice",
+    "scenario_description": "repair invoice missing",
+    "expected_handling": "request_information",
+    "claimant_name": "Vivaan Singh",
+    "policy_number": "DEMO-POL-10019",
+    "claim_type": "theft",
+    "claim_amount": 28500,
+    "incident_date": "2026-07-19",
+    "description": "Fictional theft claim test case 19; synthetic scenario data only.",
+    "documents": [
+      "claim_form"
+    ],
+    "human_decision_required": true
+  },
+  {
+    "synthetic_id": "SYN-0020",
+    "scenario": "low_confidence_docs",
+    "scenario_description": "low confidence document classification",
+    "expected_handling": "human_review",
+    "claimant_name": "Nisha Reddy",
+    "policy_number": "DEMO-POL-10020",
+    "claim_type": "medical",
+    "claim_amount": 220000,
+    "incident_date": "2026-08-20",
+    "description": "Fictional medical claim test case 20; synthetic scenario data only.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true,
+    "document_confidence": 0.32
+  },
+  {
+    "synthetic_id": "SYN-0021",
+    "scenario": "duplicate_claim",
+    "scenario_description": "duplicate case reference",
+    "expected_handling": "flag_duplicate",
+    "claimant_name": "Aarav Khan",
+    "policy_number": "DEMO-POL-10021",
+    "claim_type": "collision",
+    "claim_amount": 76000,
+    "incident_date": "2026-09-21",
+    "description": "Fictional collision claim test case 21; synthetic scenario data only.",
+    "documents": [
+      "claim_form"
+    ],
+    "human_decision_required": true,
+    "duplicate_of": "SYN-0001"
+  },
+  {
+    "synthetic_id": "SYN-0022",
+    "scenario": "high_value_claim",
+    "scenario_description": "amount above demo threshold",
+    "expected_handling": "escalate_review",
+    "claimant_name": "Diya Gupta",
+    "policy_number": "DEMO-POL-10022",
+    "claim_type": "property_damage",
+    "claim_amount": 450000,
+    "incident_date": "2026-10-22",
+    "description": "Fictional property_damage claim test case 22; synthetic scenario data only.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true
+  },
+  {
+    "synthetic_id": "SYN-0023",
+    "scenario": "date_inconsistency",
+    "scenario_description": "incident dates inconsistent",
+    "expected_handling": "flag_date_conflict",
+    "claimant_name": "Ishaan Nair",
+    "policy_number": "DEMO-POL-10023",
+    "claim_type": "theft",
+    "claim_amount": 28500,
+    "incident_date": "2026-11-23",
+    "description": "Fictional theft claim test case 23; synthetic scenario data only.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true,
+    "document_incident_date": "2026-01-01"
+  },
+  {
+    "synthetic_id": "SYN-0024",
+    "scenario": "suspicious_description",
+    "scenario_description": "suspicious or contradictory narrative",
+    "expected_handling": "human_review",
+    "claimant_name": "Meera Patel",
+    "policy_number": "DEMO-POL-10024",
+    "claim_type": "medical",
+    "claim_amount": 220000,
+    "incident_date": "2026-12-24",
+    "description": "Fictional medical claim test case 24; synthetic scenario data only. Conflicting test notes intentionally included.",
+    "documents": [
+      "claim_form"
+    ],
+    "human_decision_required": true
+  },
+  {
+    "synthetic_id": "SYN-0025",
+    "scenario": "clean_complete",
+    "scenario_description": "complete documents and consistent fields",
+    "expected_handling": "normal_review",
+    "claimant_name": "Kabir Das",
+    "policy_number": "DEMO-POL-10025",
+    "claim_type": "collision",
+    "claim_amount": 12000,
+    "incident_date": "2026-01-25",
+    "description": "Fictional collision claim test case 25; synthetic scenario data only.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true
+  },
+  {
+    "synthetic_id": "SYN-0026",
+    "scenario": "policy_mismatch",
+    "scenario_description": "policy number differs across documents",
+    "expected_handling": "flag_mismatch",
+    "claimant_name": "Anaya Iyer",
+    "policy_number": "DEMO-POL-10026",
+    "claim_type": "property_damage",
+    "claim_amount": 220000,
+    "incident_date": "2026-02-26",
+    "description": "Fictional property_damage claim test case 26; synthetic scenario data only.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true,
+    "document_policy_number": "DEMO-POL-MISMATCH"
+  },
+  {
+    "synthetic_id": "SYN-0027",
+    "scenario": "missing_invoice",
+    "scenario_description": "repair invoice missing",
+    "expected_handling": "request_information",
+    "claimant_name": "Rohan Sharma",
+    "policy_number": "DEMO-POL-10027",
+    "claim_type": "theft",
+    "claim_amount": 28500,
+    "incident_date": "2026-03-27",
+    "description": "Fictional theft claim test case 27; synthetic scenario data only.",
+    "documents": [
+      "claim_form"
+    ],
+    "human_decision_required": true
+  },
+  {
+    "synthetic_id": "SYN-0028",
+    "scenario": "low_confidence_docs",
+    "scenario_description": "low confidence document classification",
+    "expected_handling": "human_review",
+    "claimant_name": "Tara Rao",
+    "policy_number": "DEMO-POL-10028",
+    "claim_type": "medical",
+    "claim_amount": 28500,
+    "incident_date": "2026-04-01",
+    "description": "Fictional medical claim test case 28; synthetic scenario data only.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true,
+    "document_confidence": 0.32
+  },
+  {
+    "synthetic_id": "SYN-0029",
+    "scenario": "duplicate_claim",
+    "scenario_description": "duplicate case reference",
+    "expected_handling": "flag_duplicate",
+    "claimant_name": "Vivaan Singh",
+    "policy_number": "DEMO-POL-10029",
+    "claim_type": "collision",
+    "claim_amount": 28500,
+    "incident_date": "2026-05-02",
+    "description": "Fictional collision claim test case 29; synthetic scenario data only.",
+    "documents": [
+      "claim_form",
+      "invoice"
+    ],
+    "human_decision_required": true,
+    "duplicate_of": "SYN-0001"
+  },
+  {
+    "synthetic_id": "SYN-0030",
+    "scenario": "high_value_claim",
+    "scenario_description": "amount above demo threshold",
+    "expected_handling": "escalate_review",
+    "claimant_name": "Nisha Reddy",
+    "policy_number": "DEMO-POL-10030",
+    "claim_type": "property_damage",
+    "claim_amount": 450000,
+    "incident_date": "2026-06-03",
+    "description": "Fictional property_damage claim test case 30; synthetic scenario data only.",
+    "documents": [
+      "claim_form"
+    ],
+    "human_decision_required": true
+  }
+]

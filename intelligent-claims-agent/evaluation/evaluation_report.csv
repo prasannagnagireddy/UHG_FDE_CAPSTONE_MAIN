@@ -1,0 +1,8 @@
+check,passed,details
+exactly_30_synthetic_records,True,records=30
+all_8_scenarios_present,True,"present=['clean_complete', 'date_inconsistency', 'duplicate_claim', 'high_value_claim', 'low_confidence_docs', 'missing_invoice', 'policy_mismatch', 'suspicious_description']"
+unique_synthetic_ids,True,IDs must be unique
+all_claims_require_human_decision,True,No autonomous final decision expected
+amounts_nonnegative,True,All amounts numeric and non-negative
+policy_mismatch_cases_included,True,Mismatch test pack included
+missing_document_cases_included,True,Missing invoice test included

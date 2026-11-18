@@ -1,0 +1,37 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: claims-postgres
+    environment:
+      POSTGRES_USER: claims
+      POSTGRES_PASSWORD: claims
+      POSTGRES_DB: claimsdb
+    ports: ["5432:5432"]
+    volumes: ["postgres_data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U claims -d claimsdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.2
+    container_name: claims-keycloak
+    command: start-dev
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+    ports: ["8080:8080"]
+    profiles: ["auth"]
+  mailpit:
+    image: axllent/mailpit:v1.24
+    container_name: claims-mailpit
+    ports: ["8025:8025", "1025:1025"]
+  ollama:
+    image: ollama/ollama:0.5.12
+    container_name: claims-ollama
+    ports: ["11434:11434"]
+    volumes: ["ollama_data:/root/.ollama"]
+    profiles: ["llm"]
+volumes:
+  postgres_data:
+  ollama_data:

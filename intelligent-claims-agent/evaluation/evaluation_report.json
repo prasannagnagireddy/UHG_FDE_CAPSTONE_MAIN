@@ -1,0 +1,49 @@
+{
+  "evaluation_type": "synthetic_dataset_validation_only",
+  "passed": 7,
+  "total": 7,
+  "pass_rate": 1.0,
+  "release_gate": "PASS",
+  "checks": [
+    {
+      "check": "exactly_30_synthetic_records",
+      "passed": true,
+      "details": "records=30"
+    },
+    {
+      "check": "all_8_scenarios_present",
+      "passed": true,
+      "details": "present=['clean_complete', 'date_inconsistency', 'duplicate_claim', 'high_value_claim', 'low_confidence_docs', 'missing_invoice', 'policy_mismatch', 'suspicious_description']"
+    },
+    {
+      "check": "unique_synthetic_ids",
+      "passed": true,
+      "details": "IDs must be unique"
+    },
+    {
+      "check": "all_claims_require_human_decision",
+      "passed": true,
+      "details": "No autonomous final decision expected"
+    },
+    {
+      "check": "amounts_nonnegative",
+      "passed": true,
+      "details": "All amounts numeric and non-negative"
+    },
+    {
+      "check": "policy_mismatch_cases_included",
+      "passed": true,
+      "details": "Mismatch test pack included"
+    },
+    {
+      "check": "missing_document_cases_included",
+      "passed": true,
+      "details": "Missing invoice test included"
+    }
+  ],
+  "limitations": [
+    "This script validates the synthetic pack and safety metadata only.",
+    "It does not execute LangGraph, MCP servers, LLM agents, or verify claim decision accuracy.",
+    "Before capstone release, run end-to-end agent tests and record human-reviewed outcomes."
+  ]
+}
